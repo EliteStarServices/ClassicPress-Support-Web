@@ -63,20 +63,21 @@ function display_cp_web() {
 
 				$link  = esc_url(strip_tags($link));
 				$title = esc_html(trim(strip_tags($post['title'])));
+				$mylink = $post['mylink'];
+				$myname = $post['myname'];
 
 				if (empty($title)) {
 					$title = __('Nothing Found', 'cp-web');
 				}
 
 				if ($post['mylogo'] != "") {
-					$memberlogo = '<a href="' . $post['mylink'] . '"><img src="' . $post['mylogo'] . '" style="max-width:95%; max-height:110px; height:auto; width:auto; margin:0 auto; display:block;"></a>';
+					$mylogo = $post['mylogo'];
 				} else {
-					$memberlogo = '<a href="' . $post['mylink'] . '">
-					<img src="https://cp-web.elite-star-services.com/wp-content/uploads/logodemo.png" style="_max-width:95%; max-height:110px; height:autopx; width:auto; margin:0 auto; display:block;"></a>';
+					$mylogo = "https://cp-web.elite-star-services.com/wp-content/uploads/logodemo.png";
 				}
 
 				$excerpt = esc_attr(wp_trim_words($post['mytext'], 100, '...'));
-				$excerpt = str_replace('|br|', '<br>', $excerpt);
+				//$excerpt = str_replace('|br|', '<br>', $excerpt);
 
 				if (strlen($excerpt) > 165) {
 					$new_excerpt = substr($excerpt, 0, strpos($excerpt, ' ', 165));
@@ -97,23 +98,24 @@ function display_cp_web() {
 						<div class="panel panel-info ellipsis" style="height:183px; overflow:hidden; word-wrap:normal;">
 
 							<div class="panel-heading">
-								<a href="<?php esc_html_e( $post['mylink'] ); ?>" target="_blank" style="text-decoration:none;">
-								<h3 class="panel-title" style="color:#057f99;"><strong><?php esc_html_e( $post['myname'] ); ?></strong>
+								<a href="<?php esc_html_e( $mylink ); ?>" target="_blank" style="text-decoration:none;">
+								<h3 class="panel-title" style="color:#057f99;"><strong><?php esc_html_e( $myname ); ?></strong>
 								</a>
 								<div style="float:right;">
-									<a href="https://cp-web.elite-star-services.com/report-content-form/?company=<?php esc_html_e( $post['myname'] ); ?>" title="Report This Company">
+									<a href="https://cp-web.elite-star-services.com/report-content-form/?company=<?php esc_html_e( $myname ); ?>" title="Report This Company">
 										<i class="fa fa-flag" style="color:tomato;"></i></a>
 								</div>
 								</h3>
 							</div>
 
 							<div class="" style="margin-top:8px; width:50%; float:left;">
-								<?php echo $memberlogo; ?>
+								<a href="<?php esc_html_e( $mylink ); ?>">
+								<img src="<?php esc_html_e( $mylogo ); ?>" style="max-width:95%; max-height:110px; height:auto; width:auto; margin:0 auto; display:block;"></a>
 							</div>
 
 							<div class="panel-body text-primary" style="margin-top: -10px; width:50%; float:right;">
-								<?php echo '• <a href="' . $link . '"><strong>' . $title . '</strong></a><br>'; ?>
-								<?php echo $excerpt; ?>
+								• <a href="<?php esc_html_e( $link ); ?>"><strong><?php esc_html_e( $title ); ?></strong></a><br>
+								<?php esc_html_e( $excerpt ); ?>
 							</div>
 
 						</div>
@@ -146,6 +148,7 @@ function display_cp_web() {
 
 
 			$content = ob_get_clean(); // store buffered output content.
+			$content = str_replace('|br|', '<br>', $content);
 
 			return $content; // Return the content.
 		}
