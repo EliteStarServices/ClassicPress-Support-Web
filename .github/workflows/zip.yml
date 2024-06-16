@@ -15,15 +15,15 @@ jobs:
           git config user.email "<>"
       - name: Create artifact
         run : |
-          git archive -o cp-wpvmod.zip --prefix cp-wpvmod/ HEAD 
+          git archive -o cp-wpweb.zip --prefix cp-web/ HEAD 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-            name: cp-wpvmod
-            path: cp-wpvmod.zip
+            name: cp-web
+            path: cp-web.zip
       - name: Upload to release
         uses: JasonEtco/upload-to-release@master
         with:
-          args: cp-wpvmod.zip application/zip
+          args: cp-web.zip application/zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

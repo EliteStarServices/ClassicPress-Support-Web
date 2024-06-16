@@ -14,7 +14,7 @@ jobs:
             sed -i '/^\t<!-- start config -->.*/a\
               <file>.</file>
               ' phpcs.xml
-            sed -i '/MY_DOMAIN/ s//cwv-textdomain/' phpcs.xml
+            sed -i '/MY_DOMAIN/ s//cp-web/' phpcs.xml
             cat phpcs.xml
         - name: CPCS checks
           uses: 10up/wpcs-action@stable

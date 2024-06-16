@@ -33,7 +33,7 @@ function display_cp_web() {
 						<div class="row" style="margin-top:-15px;">
 							<div class="col-md-8 col-sm-8 col-xs-12" style="margin:0px;"><h3>
 								<?php esc_html_e('Welcome to the ', 'cp-web'); ?>
-								<?php echo '<a href="' . $cphome . '"><strong>'; ?>
+								<?php echo '<a href="' . esc_url( $cphome ) . '"><strong>'; ?>
 								<?php esc_html_e('ClassicPress Support Network!', 'cp-web'); ?>
 								</a></h3>
 								<?php esc_html_e('A place for developers to showcase their services and users to find professionals.', 'cp-web'); ?>
@@ -97,11 +97,11 @@ function display_cp_web() {
 						<div class="panel panel-info ellipsis" style="height:183px; overflow:hidden; word-wrap:normal;">
 
 							<div class="panel-heading">
-								<a href="<?php echo $post['mylink']; ?>" target="_blank" style="text-decoration:none;">
-									<h3 class="panel-title" style="color:#057f99;"><strong><?php echo $post['myname']; ?></strong>
+								<a href="<?php esc_html_e( $post['mylink'] ); ?>" target="_blank" style="text-decoration:none;">
+								<h3 class="panel-title" style="color:#057f99;"><strong><?php esc_html_e( $post['myname'] ); ?></strong>
 								</a>
 								<div style="float:right;">
-									<a href="https://cp-web.elite-star-services.com/report-content-form/?company=<?php echo $post['myname']; ?>" title="Report This Company">
+									<a href="https://cp-web.elite-star-services.com/report-content-form/?company=<?php esc_html_e( $post['myname'] ); ?>" title="Report This Company">
 										<i class="fa fa-flag" style="color:tomato;"></i></a>
 								</div>
 								</h3>
