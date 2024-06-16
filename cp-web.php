@@ -123,10 +123,6 @@ function display_cp_web() {
 
 			<?php
 
-
-			//printf(__('<li><strong><a href="%1$s">%2$s</a></strong><br>%3$s%4$s%5$s</li>', 'cp-web'), $link, $title, $date, $memberlink, $summary);
-
-
 			$cnt++;
 		}
 	} else {
