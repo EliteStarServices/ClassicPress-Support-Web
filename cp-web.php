@@ -126,7 +126,10 @@ function display_cp_web() {
 			$cnt++;
 		}
 	} else {
-		printf( '<li>%s</li>', $posts );
+		echo wp_kses(
+			sprintf( '<li>%s</li>', esc_html( $posts ) ),
+			array( 'li' => array() )
+			);
 	}
 
 			?>
