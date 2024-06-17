@@ -98,24 +98,24 @@ function display_cp_web() {
 						<div class="panel panel-info ellipsis" style="height:183px; overflow:hidden; word-wrap:normal;">
 
 							<div class="panel-heading">
-								<a href="<?php esc_html_e( $mylink ); ?>" target="_blank" style="text-decoration:none;">
-								<h3 class="panel-title" style="color:#057f99;"><strong><?php esc_html_e( $myname ); ?></strong>
+								<a href="<?php echo esc_html( $mylink ); ?>" target="_blank" style="text-decoration:none;">
+								<h3 class="panel-title" style="color:#057f99;"><strong><?php echo esc_html( $myname ); ?></strong>
 								</a>
 								<div style="float:right;">
-									<a href="https://cp-web.elite-star-services.com/report-content-form/?company=<?php esc_html_e( $myname ); ?>" title="Report This Company">
+									<a href="https://cp-web.elite-star-services.com/report-content-form/?company=<?php echo esc_html( $myname ); ?>" title="Report This Company">
 										<i class="fa fa-flag" style="color:tomato;"></i></a>
 								</div>
 								</h3>
 							</div>
 
 							<div class="" style="margin-top:8px; width:50%; float:left;">
-								<a href="<?php esc_html_e( $mylink ); ?>">
-								<img src="<?php esc_html_e( $mylogo ); ?>" style="max-width:95%; max-height:110px; height:auto; width:auto; margin:0 auto; display:block;"></a>
+								<a href="<?php echo esc_html( $mylink ); ?>">
+								<img src="<?php echo esc_html( $mylogo ); ?>" style="max-width:95%; max-height:110px; height:auto; width:auto; margin:0 auto; display:block;"></a>
 							</div>
 
 							<div class="panel-body text-primary" style="margin-top: -10px; width:50%; float:right;">
-								• <a href="<?php esc_html_e( $link ); ?>"><strong><?php esc_html_e( $title ); ?></strong></a><br>
-								<?php esc_html_e( $excerpt ); ?>
+								• <a href="<?php echo esc_html( $link ); ?>"><strong><?php echo esc_html( $title ); ?></strong></a><br>
+								<?php echo esc_html( $excerpt ); ?>
 							</div>
 
 						</div>
@@ -126,7 +126,7 @@ function display_cp_web() {
 			$cnt++;
 		}
 	} else {
-		printf(__('<li>%s</li>', 'cp-web'), $posts);
+		printf( '<li>%s</li>', $posts );
 	}
 
 			?>
@@ -210,7 +210,7 @@ function display_cp_web() {
 		add_action('wp_enqueue_scripts', 'cpm_assets');
 
 
-		/* DISABLED UNTIL ADDED TO CLASSICPRESS DIRECTORY
+/* DISABLED UNTIL ADDED TO CLASSICPRESS DIRECTORY
 // Plugin Update Checker if not using ClassicPress Directory Integration plugin
 if ( ! function_exists( 'is_plugin_active' ) ) {
 	require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
