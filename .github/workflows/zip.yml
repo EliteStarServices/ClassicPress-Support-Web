@@ -15,7 +15,7 @@ jobs:
           git config user.email "<>"
       - name: Create artifact
         run : |
-          git archive -o cp-wpweb.zip --prefix cp-web/ HEAD 
+          git archive -o cp-web.zip --prefix cp-web/ HEAD 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
