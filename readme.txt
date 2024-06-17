@@ -4,7 +4,7 @@ Requires at least: 4.9
 Requires CP: 1.7
 Tested up to: 6.5
 Requires PHP: 7.4
-Stable tag: 0.9.6
+Stable tag: 0.9.7
 
 
 == Description ==
@@ -20,6 +20,13 @@ Client Plugin to Display ClassicPress Support Network Listing.
 *Updates will be available in the dashboard like any other plugin*
 
 == ChangeLog ==
+
+= 0.9.7 =
+6/17/24
+
+- CPCS Ready
+- Alpha Testing Version
+- Shortcodes in own Script
 
 = 0.9.6 =
 6/16/24
